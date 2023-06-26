@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Sentence Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .sentence {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="sentence">Loading...</div>
+
+    <script>
+        var words = ["in", "the", "age", "of,", "information", "ignorance", "is", "a", "choice"];
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        shuffleArray(words);
+        var sentence = words.join(" ");
+        document.getElementById("content").textContent = sentence;
+    </script>
+</body>
+</html>
